@@ -1,0 +1,38 @@
+Grammar
+=======
+
+input -> stmt_list ;
+
+stmt_list -> stmt_list ; stmt
+            | stmt
+
+stmt -> IDENT = expr
+        | PRINT expr
+
+expr -> expr + term
+        | term
+
+term -> term * factor
+        | factor
+
+factor -> IDENT
+        | NUMBER
+        | ( expr )
+
+input ->stmt_list
+
+stmt_list -> stmt stmt_list_prime
+
+stmt-> IDENT = expr
+        | PRINT expr
+
+expr-> term expression_prime
+expr_prime -> + t expression_prime 
+
+term->factor term_prime
+term_prime-> * factor term_prime 
+
+
+factor -> IDENT
+        | NUMBER
+        | ( expr )

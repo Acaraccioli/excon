@@ -1,0 +1,14 @@
+Input -> stmt Eol Ip
+Ip -> stmt Eol Ip
+Ip -> ''
+stmt -> Print Expr
+stmt -> Ident OpAssign Expr ClosePar
+Expr -> T Ep
+Ep -> OpAdd T Ep
+Ep -> ''
+T -> F Tp
+Tp -> OpMul F Tp
+Tp -> ''
+F -> Ident
+F -> Number
+F -> OpenPar Expr ClosePar

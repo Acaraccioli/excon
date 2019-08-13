@@ -1,0 +1,15 @@
+input -> stmt_list
+stmt_list -> expr Semicolon stmt_list_prime
+stmt_list_prime -> expr Semicolon stmt_list_prime
+stmt_list_prime -> ''
+expr-> term  expr_prime
+expr_prime -> OpAdd term  expr_prime
+expr_prime -> OpSub term  expr_prime
+expr_prime-> ''
+term-> factor term_prime
+term_prime > OpMult factor term_prime
+term_prime > OpDiv factor term_prime
+term_prime -> ''
+factor -> Number
+factor-> OpenPar expr ClosePar
+

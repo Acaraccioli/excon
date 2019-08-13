@@ -1,0 +1,15 @@
+input -> stmt_list 
+stmt_list -> stmt Semicolon stmt_list_prime
+stmt_list_prime -> stmt Semicolon stmt_list_prime
+stmt_list_prime -> ''
+stmt -> Ident OpAssign expr
+stmt -> KwPrint expr
+expr -> term  expr_prime
+expr_prime -> OpAdd term expr_prime
+expr_prime -> ''
+term -> factor term_prime
+term_prime -> OpMult factor term_prime
+term_prime-> ''
+factor -> Ident
+factor -> Number
+factor -> OpenPar expr ClosePar
